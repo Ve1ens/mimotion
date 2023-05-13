@@ -299,7 +299,7 @@ def main(_user, _passwd, _step):
 
     response = requests.post(url, data=data, headers=head).json()
     # print(response)
-    result = f"{_user[:4]}****{_user[-4:]}: [{now}] 修改步数（{_step}）" + response['message']
+    result = f"{user[:3]}****{user[-4:]}，修改步数：{step}，" + response['message'].replace('suc','Suc')
     print(result)
     return result
 
